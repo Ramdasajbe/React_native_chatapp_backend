@@ -59,9 +59,7 @@ const server = createServer(app);
 
 const start = async () => {
   try {
-    await connectDB(
-      "mongodb+srv://ajberamdas7:G06q9Oc3MghniFvf@cluster0.ud9jnko.mongodb.net/ptax?retryWrites=true&w=majority"
-    );
+    await connectDB(process.env.MONGO_URI);
     server.listen(port, () =>
       console.log(`Server Running on port : ${port}...`)
     );
